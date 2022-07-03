@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="VideoQuickSeeking_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT7-67-LsZ">
+                                <rect key="frame" x="0.0" y="228" width="375" height="211"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KT7-67-LsZ" secondAttribute="height" multiplier="16:9" id="8dQ-la-h87"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a43-57-Fvg">
+                                <rect key="frame" x="0.0" y="228" width="375" height="211"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeV-Nx-OC9">
+                                        <rect key="frame" x="157.5" y="75.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="93N-Xj-eRq"/>
+                                            <constraint firstAttribute="height" constant="60" id="dI6-1C-zbb"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_play"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qeV-Nx-OC9" firstAttribute="centerY" secondItem="a43-57-Fvg" secondAttribute="centerY" id="pTJ-dt-FS6"/>
+                                    <constraint firstItem="qeV-Nx-OC9" firstAttribute="centerX" secondItem="a43-57-Fvg" secondAttribute="centerX" id="x7b-Ir-okU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="a43-57-Fvg" firstAttribute="leading" secondItem="KT7-67-LsZ" secondAttribute="leading" id="B2j-w4-Pw2"/>
+                            <constraint firstItem="a43-57-Fvg" firstAttribute="top" secondItem="KT7-67-LsZ" secondAttribute="top" id="LJL-jm-wPB"/>
+                            <constraint firstItem="KT7-67-LsZ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="aTf-zl-s9l"/>
+                            <constraint firstItem="KT7-67-LsZ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bDs-Xg-Ym6"/>
+                            <constraint firstItem="a43-57-Fvg" firstAttribute="trailing" secondItem="KT7-67-LsZ" secondAttribute="trailing" id="gZ7-nI-3Va"/>
+                            <constraint firstItem="KT7-67-LsZ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="gdL-rg-X6o"/>
+                            <constraint firstAttribute="trailing" secondItem="KT7-67-LsZ" secondAttribute="trailing" id="sSx-WO-m1u"/>
+                            <constraint firstItem="a43-57-Fvg" firstAttribute="bottom" secondItem="KT7-67-LsZ" secondAttribute="bottom" id="uaU-76-fen"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backdropView" destination="a43-57-Fvg" id="JCq-gu-ZDg"/>
+                        <outlet property="playButton" destination="qeV-Nx-OC9" id="VWG-ge-a4Y"/>
+                        <outlet property="playerContainerView" destination="KT7-67-LsZ" id="w2h-b5-8Yc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="111.99400299850076"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_play" width="48" height="48"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
