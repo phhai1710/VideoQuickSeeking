@@ -17,19 +17,20 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = 'Youtube-like double tap to forward/rewind animation'
+  s.description      = 'Youtube-like double tap to forward/rewind animation.'
 
   s.homepage         = 'https://github.com/phhai1710/VideoQuickSeeking'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Hai Pham' => 'phhai1710@gmail.com' }
   s.source           = { :git => 'https://github.com/phhai1710/VideoQuickSeeking.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://www.linkedin.com/in/hai-pham-092682164/'
+  s.social_media_url = 'https://github.com/phhai1710'
 
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'VideoQuickSeeking/Classes/**/*'
-  s.resources = 'ForwardRewindPlayerView/Assets/*.xcassets'
+  s.resources = 'VideoQuickSeeking/Assets/*.xcassets'
+  s.swift_version = '4.0'
   # s.resource_bundles = {
   #   'VideoQuickSeeking' => ['VideoQuickSeeking/Assets/*.png']
   # }
