@@ -7,7 +7,7 @@
 
 ![VideoQuickSeeking](https://github.com/phhai1710/VideoQuickSeeking/blob/master/Resources/sample.gif?raw=true)
 
-Youtube-like double tap to forward/rewind animation
+Youtube-like double tap to forward/rewind animation with ripple effect.
   
 ## Example
 
