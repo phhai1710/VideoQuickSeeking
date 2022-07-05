@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         }
     }
     
-    private lazy var forwardRewindPlayerView: QuickSeekingView = {
+    private lazy var quickSeekingView: QuickSeekingView = {
         let view = QuickSeekingView(seekingDuration: self.seekingDuration)
         view.tintColor = .white
         return view
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         self.playerContainerView.layer.addSublayer(avPlayerLayer)
-        self.playerContainerView.addSubview(self.forwardRewindPlayerView)
+        self.playerContainerView.addSubview(self.quickSeekingView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.forwardRewindPlayerView.frame = self.playerContainerView.bounds
+        self.quickSeekingView.frame = self.playerContainerView.bounds
         self.avPlayerLayer.frame = self.playerContainerView.bounds
     }
     
@@ -117,8 +117,8 @@ extension ViewController {
     }
     
     @objc private func doubleTap(_ sender: UIGestureRecognizer) {
-        let point = sender.location(in: self.forwardRewindPlayerView)
-        if let direction = self.forwardRewindPlayerView.directionOfPoint(point: point) {
+        let point = sender.location(in: self.quickSeekingView)
+        if let direction = self.quickSeekingView.directionOfPoint(point: point) {
             let newTime: Int64
             var shouldResetSeekingCounter = false
             switch direction {
@@ -143,22 +143,10 @@ extension ViewController {
             let targetTime = CMTimeMake(newTime, 1)
             self.avPlayer.seek(to: targetTime)
             
-            self.forwardRewindPlayerView.animate(direction: direction,
+            self.quickSeekingView.animate(direction: direction,
                                                  at: point,
                                                  shouldResetSeekingCounter: shouldResetSeekingCounter)
         }
-        print("rewindDoubleTap")
-    }
-    
-    @objc private func rewindDoubleTap(_ sender: UIGestureRecognizer) {
-        self.forwardRewindPlayerView.animate(direction: .rewind,
-                                             at: sender.location(in: self.forwardRewindPlayerView))
-        print("rewindDoubleTap")
-    }
-    
-    @objc private func forwardDoubleTap(_ sender: UIGestureRecognizer) {
-        self.forwardRewindPlayerView.animate(direction: .forward,
-                                             at: sender.location(in: self.forwardRewindPlayerView))
-        print("forwardDoubleTap")
+        print("doubleTap")
     }
 }

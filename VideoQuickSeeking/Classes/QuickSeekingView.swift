@@ -115,7 +115,7 @@ open class QuickSeekingView: UIView {
     /// Get the direction(Forward/Rewind) of touch point
     ///
     /// - Parameter point: Position of touch point
-    /// - Returns: Direction(Forward/Rewind)
+    /// - Returns: Direction(Forward/Rewind) or nil if the point is in outside
     public func directionOfPoint(point: CGPoint) -> FRDirection? {
         let point = self.convert(point, to: self.rewindView)
         if self.rewindView.bounds.contains(point) {
