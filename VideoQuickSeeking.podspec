@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VideoQuickSeeking'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Youtube-like double tap to forward/rewind animation with ripple effect'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = 'Youtube-like double tap to forward/rewind animation with ripple effect.'
 
   s.homepage         = 'https://github.com/phhai1710/VideoQuickSeeking'
-#  s.screenshots      = 'https://github.com/phhai1710/VideoQuickSeeking/blob/master/Resources/sample.gif?raw=true'
+  s.screenshots      = 'https://raw.githubusercontent.com/phhai1710/VideoQuickSeeking/master/Resources/screenshot1.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Hai Pham' => 'phhai1710@gmail.com' }
   s.source           = { :git => 'https://github.com/phhai1710/VideoQuickSeeking.git', :tag => s.version.to_s }

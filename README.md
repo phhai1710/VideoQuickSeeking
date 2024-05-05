@@ -1,6 +1,5 @@
 # VideoQuickSeeking
 
-[![CI Status](https://img.shields.io/travis/phhai1710/VideoQuickSeeking.svg?style=flat)](https://travis-ci.org/phhai1710/VideoQuickSeeking)
 [![Version](https://img.shields.io/cocoapods/v/VideoQuickSeeking.svg?style=flat)](https://cocoapods.org/pods/VideoQuickSeeking)
 [![License](https://img.shields.io/cocoapods/l/VideoQuickSeeking.svg?style=flat)](https://cocoapods.org/pods/VideoQuickSeeking)
 [![Platform](https://img.shields.io/cocoapods/p/VideoQuickSeeking.svg?style=flat)](https://cocoapods.org/pods/VideoQuickSeeking)
