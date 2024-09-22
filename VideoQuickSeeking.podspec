@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VideoQuickSeeking'
-  s.version          = '1.0.2'
+  s.version          = '1.0.3'
   s.summary          = 'Youtube-like double tap to forward/rewind animation with ripple effect'
 
 # This description is used to generate tags and improve search results.

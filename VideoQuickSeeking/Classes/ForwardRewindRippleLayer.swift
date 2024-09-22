@@ -15,6 +15,53 @@ class ForwardRewindRippleLayer: CALayer {
     private let direction: FRDirection
     private var maskLayer = CAShapeLayer()
     private lazy var bezierPath: UIBezierPath = {
+        return createBezierPath()
+    }()
+    
+    private lazy var rippleLayer: FRRippleLayer = {
+        let rippleLayer = FRRippleLayer(superLayer: self)
+        rippleLayer.setRippleColor(color: .lightGray, withRippleAlpha: 0.2, withBackgroundAlpha: 0.2)
+        return rippleLayer
+    }()
+    
+    override var bounds: CGRect {
+        didSet {
+            self.superLayerDidResize()
+        }
+    }
+    
+    // MARK: - Constructors
+    private override init(layer: Any) {
+        self.direction = .rewind
+        super.init()
+    }
+    
+    init(direction: FRDirection) {
+        self.direction = direction
+        super.init()
+        self.setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Private methods
+    private func setup() {
+        self.mask = maskLayer
+        
+        self.addSublayer(self.rippleLayer)
+    }
+    
+    private func superLayerDidResize() {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        bezierPath = createBezierPath()
+        maskLayer.path = bezierPath.cgPath
+        CATransaction.commit()
+    }
+    
+    private func createBezierPath() -> UIBezierPath {
         let bezierPath = UIBezierPath()
         switch direction {
         case .rewind:
@@ -34,56 +81,6 @@ class ForwardRewindRippleLayer: CALayer {
         }
         bezierPath.close()
         return bezierPath
-    }()
-    
-    private lazy var rippleLayer: FRRippleLayer = {
-        let rippleLayer = FRRippleLayer(superLayer: self)
-        rippleLayer.setRippleColor(color: .lightGray, withRippleAlpha: 0.2, withBackgroundAlpha: 0.2)
-        return rippleLayer
-    }()
-    
-    // MARK: - Constructors
-    private override init(layer: Any) {
-        self.direction = .rewind
-        super.init()
-    }
-    
-    init(direction: FRDirection) {
-        self.direction = direction
-        super.init()
-        self.setup()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let keyPath = keyPath {
-            if keyPath == "bounds" {
-                self.superLayerDidResize()
-            }
-        }
-    }
-    
-    // MARK: - Private methods
-    private func setup() {
-        self.mask = maskLayer
-        
-        self.addSublayer(self.rippleLayer)
-        
-        self.addObserver(
-            self,
-            forKeyPath: "bounds",
-            options: NSKeyValueObservingOptions(rawValue: 0),
-            context: nil)
-    }
-    
-    private func superLayerDidResize() {
-        CATransaction.begin()
-        CATransaction.setDisableActions(true)
-        maskLayer.path = bezierPath.cgPath
-        CATransaction.commit()
     }
     
     // MARK: - Public methods

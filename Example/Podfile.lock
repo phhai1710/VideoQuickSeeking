@@ -1,5 +1,5 @@
 PODS:
-  - VideoQuickSeeking (1.0.2)
+  - VideoQuickSeeking (1.0.3)
 
 DEPENDENCIES:
   - VideoQuickSeeking (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  VideoQuickSeeking: 910b598eeb6d845e41e1680548fc46826e8e9608
+  VideoQuickSeeking: f6675bfa1f33a6414c0852a7f768ad731a72947a
 
 PODFILE CHECKSUM: baf1ea4ebdffefb3a67289532b172e329ea1a3e2
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.15.2

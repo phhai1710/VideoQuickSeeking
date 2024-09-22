@@ -77,7 +77,8 @@ public class ForwardRewindView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        
+        self.forwardRewindSubLayer.frame = self.bounds
+
         self.imageViews.enumerated().forEach { index, imageView in
             imageView.frame = CGRect(x: CGFloat(index) * ForwardRewindView.imageViewSize,
                                      y: 0,
@@ -108,7 +109,6 @@ public class ForwardRewindView: UIView {
                                           width: containerWidth,
                                           height: containerHeight)
         
-        self.forwardRewindSubLayer.frame = self.bounds
     }
     
     public func setRippleStyle(color: UIColor,
